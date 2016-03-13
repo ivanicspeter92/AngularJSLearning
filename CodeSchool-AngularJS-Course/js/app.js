@@ -1,22 +1,5 @@
 (function() {
 	var app = angular.module('store', [ ]);
-	
-	app.controller('StoreController', function(){
-		this.products = gems;
-	});
-
-	app.controller('PanelController', function(){
-		this.tab = 1;
-
-		this.selectTab = function(setTab) {
-			this.tab = setTab;
-		};
-
-		this.isSelected = function(checkTab) {
-			return this.tab === checkTab;
-		};
-	});
-	
 	var imagesPath = "images/";
 	var gemImagesPath = imagesPath + "gems/";
 	var gems = [
@@ -65,4 +48,34 @@
 			}
 		}
 	];
+	
+	app.controller('StoreController', function(){
+		this.products = gems;
+	});
+
+	app.controller('PanelController', function(){
+		/**
+		 * Indicates which of the tabs in order is selected.
+		 * @type {number}
+         */
+		this.tab = 1;
+
+		/**
+		 * Sets the value of the tab variable to the given value.
+		 * @param setTab The cardinal order of the tab to be selected.
+         */
+		this.selectTab = function(setTab) {
+			this.tab = setTab;
+		};
+
+		/**
+		 * Tells if the active tab equals to the given number.
+		 *
+		 * @param checkTab The order of the tab to be checked in the array.
+		 * @returns {boolean}
+         */
+		this.isSelected = function(checkTab) {
+			return this.tab === checkTab;
+		};
+	});
 })();
