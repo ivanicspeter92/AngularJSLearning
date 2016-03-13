@@ -4,6 +4,9 @@
 	app.controller('StoreController', function(){
 		this.products = gems;
 	});
+
+	app.controller('PanelController', function(){
+	});
 	
 	var imagesPath = "images/";
 	var gemImagesPath = imagesPath + "gems/";
