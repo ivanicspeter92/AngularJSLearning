@@ -8,7 +8,7 @@
 		<script type="text/javascript" src="js/app.js"></script>
 		
 		<ul class="list-group-item">
-			<li ng-repeat="product in store.products" ng-hide="product.soldOut">
+			<li ng-repeat="product in store.products | orderBy: 'price'" ng-hide="product.soldOut">
 				<h1>
 					{{ product.name }}
 					<em class="pull-right">
