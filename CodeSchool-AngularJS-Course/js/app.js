@@ -6,6 +6,10 @@
 	});
 
 	app.controller('PanelController', function(){
+		this.tab = 1;
+		this.setTab = function(setTab) {
+			this.tab = setTab;
+		};
 	});
 	
 	var imagesPath = "images/";
