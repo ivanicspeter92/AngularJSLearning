@@ -22,7 +22,8 @@
         <img ng-src="{{ product.image.thumbnail }}"/>
 
         <section>
-            <ul class="nav nav-pills">
+            <!-- ng-init: initializes a value in the current scope - https://docs.angularjs.org/api/ng/directive/ngInit -->
+            <ul class="nav nav-pills" ng-init="tab = 1">
                 <li><a href ng-click="tab = 1">Description</a> </li>
                 <li><a href ng-click="tab = 2">Specifications</a> </li>
                 <li><a href ng-click="tab = 3">Reviews</a> </li>
