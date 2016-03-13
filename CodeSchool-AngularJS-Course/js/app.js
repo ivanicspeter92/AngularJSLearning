@@ -62,20 +62,20 @@
 
 		/**
 		 * Sets the value of the tab variable to the given value.
-		 * @param setTab The cardinal order of the tab to be selected.
+		 * @param tab The cardinal order of the tab to be selected.
          */
-		this.selectTab = function(setTab) {
-			this.tab = setTab;
+		this.selectTab = function(tab) {
+			this.tab = tab;
 		};
 
 		/**
 		 * Tells if the active tab equals to the given number.
 		 *
-		 * @param checkTab The order of the tab to be checked in the array.
+		 * @param tab The order of the tab to be checked in the array.
 		 * @returns {boolean}
          */
-		this.isSelected = function(checkTab) {
-			return this.tab === checkTab;
+		this.isSelected = function(tab) {
+			return this.tab === tab;
 		};
 	});
 })();
