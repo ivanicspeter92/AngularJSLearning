@@ -24,9 +24,17 @@
         <section>
             <!-- ng-init: initializes a value in the current scope - https://docs.angularjs.org/api/ng/directive/ngInit -->
             <ul class="nav nav-pills" ng-init="tab = 1">
-                <li><a href ng-click="tab = 1">Description</a> </li>
-                <li><a href ng-click="tab = 2">Specifications</a> </li>
-                <li><a href ng-click="tab = 3">Reviews</a> </li>
+                <!-- ng-class: defines the class of the element based on an expression dynamically - https://docs.angularjs.org/api/ng/directive/ngClass -->
+                <li ng-class="{ active: tab === 1 }">
+                    <!-- ng-click: defines an action to be performed when the item is clicked - https://docs.angularjs.org/api/ng/directive/ngClick -->
+                    <a href ng-click="tab = 1">Description</a>
+                </li>
+                <li ng-class="{ active: tab === 2 }">
+                    <a href ng-click="tab = 2">Specifications</a>
+                </li>
+                <li ng-class="{ active: tab === 3 }">
+                    <a href ng-click="tab = 3">Reviews</a>
+                </li>
             </ul>
         </section>
         <div class="panel" ng-show="tab === 1">
