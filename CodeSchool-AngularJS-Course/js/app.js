@@ -18,7 +18,7 @@
 			price: 4.95,
 			description: ". . .",
 			canPurchase: true,
-			soldOut: false
+			soldOut: true
 		}
 	];
 })();
