@@ -14,10 +14,12 @@
 					<em class="pull-right">
 						{{ product.price | currency }}
 					</em>
-				</h1>
-				<p>
-					{{ product.description }}
-				</p>
+				</h1> 
+				<table>
+				<tr>
+					<td><img ng-src="{{ product.image.full }}" /></td>
+					<td>{{ product.description }}</td>
+				</tr>
 				<button ng-show="store.product.canPurchase">Add to Cart</button>
 			</li>
 		</ul>
