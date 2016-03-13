@@ -78,4 +78,17 @@
 			return this.tab === tab;
 		};
 	});
+
+	app.controller('GalleryController', function() {
+		this.current = 0;
+
+		this.setCurrent = function(current) {
+			if (current === null) {
+				this.current = 0;
+			}
+			else {
+				this.current = current;
+			}
+		};
+	});
 })();
