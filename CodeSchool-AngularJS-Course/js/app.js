@@ -2,7 +2,7 @@
 	var app = angular.module('store', [ ]);
 	
 	app.controller('StoreController', function(){
-		this.product = gems;
+		this.products = gems;
 	});
 	
 	var gems = [
