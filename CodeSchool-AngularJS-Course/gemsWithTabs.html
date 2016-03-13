@@ -21,37 +21,38 @@
         <!-- ng-src: loading data using "src" does not work right, ng-src is trusted - https://docs.angularjs.org/api/ng/directive/ngSrc -->
         <img ng-src="{{ product.image.thumbnail }}"/>
 
-        <section>
-            <!-- ng-init: initializes a value in the current scope - https://docs.angularjs.org/api/ng/directive/ngInit -->
-            <ul class="nav nav-pills" ng-init="tab = 1">
+        <!-- ng-init: initializes a value in the current scope - https://docs.angularjs.org/api/ng/directive/ngInit -->
+        <section ng-controller="PanelController as panel">
+            <ul class="nav nav-pills" >
                 <!-- ng-class: defines the class of the element based on an expression dynamically - https://docs.angularjs.org/api/ng/directive/ngClass -->
-                <li ng-class="{ active: tab === 1 }">
+                <li ng-class="{ active: panel.isSelected(1) }">
                     <!-- ng-click: defines an action to be performed when the item is clicked - https://docs.angularjs.org/api/ng/directive/ngClick -->
-                    <a href ng-click="tab = 1">Description</a>
+                    <a href ng-click="panel.selectTab(1)">Description</a>
                 </li>
-                <li ng-class="{ active: tab === 2 }">
-                    <a href ng-click="tab = 2">Specifications</a>
+                <li ng-class="{ active: panel.isSelected(2) }">
+                    <a href ng-click="panel.selectTab(2)">Specifications</a>
                 </li>
-                <li ng-class="{ active: tab === 3 }">
-                    <a href ng-click="tab = 3">Reviews</a>
+                <li ng-class="{ active: panel.isSelected(3) }">
+                    <a href ng-click="panel.selectTab(3)">Reviews</a>
                 </li>
             </ul>
-        </section>
-        <div class="panel" ng-show="tab === 1">
-            <h4>Description</h4>
-            <p>{{ product.description }}</p>
-        </div>
-        <div class="panel" ng-show="tab === 2">
-            <h4>Specification</h4>
-            <blockquote>No specifications yet</blockquote>
-        </div>
-        <div class="panel" ng-show="tab === 3">
-            <h4>Reviews</h4>
-            <blockquote>No reviews yet</blockquote>
-        </div>
 
-        <!-- ng-show: shows the tag according to a predicate - https://docs.angularjs.org/api/ng/directive/ngShow -->
-        <button ng-show="store.product.canPurchase">Add to Cart</button>
+            <div class="panel" ng-show=" panel.isSelected(1)">
+                <h4>Description</h4>
+                <p>{{ product.description }}</p>
+            </div>
+            <div class="panel" ng-show=" panel.isSelected(2)">
+                <h4>Specification</h4>
+                <blockquote>No specifications yet</blockquote>
+            </div>
+            <div class="panel" ng-show=" panel.isSelected(3)">
+                <h4>Reviews</h4>
+                <blockquote>No reviews yet</blockquote>
+            </div>
+
+            <!-- ng-show: shows the tag according to a predicate - https://docs.angularjs.org/api/ng/directive/ngShow -->
+            <button ng-show="store.product.canPurchase">Add to Cart</button>
+        </section>
 </ul>
 </body>
 </html>
