@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="store">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+</head>
+<body ng-controller="StoreController as store">
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+<ul class="list-group-item">
+    <!-- ng-repeat="variable in dataset": foreach (variable in dataset) - https://docs.angularjs.org/api/ng/directive/ngRepeat -->
+    <!-- orderBy: orders the result by a predicate (putting "-" in front reverses the order) - https://docs.angularjs.org/api/ng/filter/orderBy -->
+    <!-- ng-hide: hides the tag according to a predicate - https://docs.angularjs.org/api/ng/directive/ngHide -->
+    <li ng-repeat="product in store.products | orderBy: 'price'" ng-hide="product.soldOut">
+        <h1>
+            {{ product.name }}
+            <em class="pull-right">
+                {{ product.price | currency }} <!-- currency is a filter  -->
+            </em>
+        </h1>
+        <!-- ng-src: loading data using "src" does not work right, ng-src is trusted - https://docs.angularjs.org/api/ng/directive/ngSrc -->
+        <img ng-src="{{ product.image.thumbnail }}"/>
+
+        <section>
+            <ul class="nav nav-pills">
+                <li><a href ng-click="tab = 1">Description</a> </li>
+                <li><a href ng-click="tab = 2">Specifications</a> </li>
+                <li><a href ng-click="tab = 3">Reviews</a> </li>
+            </ul>
+        </section>
+
+        <!-- ng-show: shows the tag according to a predicate - https://docs.angularjs.org/api/ng/directive/ngShow -->
+        <button ng-show="store.product.canPurchase">Add to Cart</button>
+</ul>
+</body>
+</html>
