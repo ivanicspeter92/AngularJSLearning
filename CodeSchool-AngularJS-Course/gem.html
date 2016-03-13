@@ -12,7 +12,7 @@
 				<h1>
 					{{ product.name }}
 					<em class="pull-right">
-						${{ product.price }}
+						{{ product.price | currency }}
 					</em>
 				</h1>
 				<p>
