@@ -7,17 +7,19 @@
 		<script type="text/javascript" src="js/angular.min.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
 		
-		<div ng-repeat="product in store.products" ng-hide="product.soldOut">
-			<h1>
-				{{ product.name }}
-			</h1>
-			<h2>
-				{{ product.price }}
-			</h2>
-			<p>
-				{{ product.description }}
-			</p>
-			<button ng-show="store.product.canPurchase">Add to Cart</button>
-		</div>
+		<ul class="list-group-item">
+			<li ng-repeat="product in store.products" ng-hide="product.soldOut">
+				<h1>
+					{{ product.name }}
+					<em class="pull-right">
+						${{ product.price }}
+					</em>
+				</h1>
+				<p>
+					{{ product.description }}
+				</p>
+				<button ng-show="store.product.canPurchase">Add to Cart</button>
+			</li>
+		</ul>
 	</body>
 </html>
