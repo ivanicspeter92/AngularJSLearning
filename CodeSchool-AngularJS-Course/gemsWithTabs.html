@@ -54,15 +54,15 @@
                 </blockquote>
             </div>
 
-            <form name="reviewForm">
+            <form name="reviewForm" ng-controller="ReviewController as reviewCtrl">
                 <blockquote>
-                    <b>Rating: {{ review.rating }}</b>
-                    {{ review.body }}
-                    <cite>by: {{ review.author }}</cite>
+                    <b>Rating: {{ reviewCtrl.review.rating }}</b>
+                    {{ reviewCtrl.review.body }}
+                    <cite>by: {{ reviewCtrl.review.author }}</cite>
                 </blockquote>
 
                 <!-- ng-model: binds the value of the form element to a property - https://docs.angularjs.org/api/ng/directive/ngModel -->
-                <select ng-model="review.rating">
+                <select ng-model="reviewCtrl.review.rating">
                     <option value="1">1</option>
                     <option value="4">2</option>
                     <option value="4">3</option>
@@ -71,7 +71,7 @@
                 </select>
                 <textarea ng-model="review.body"></textarea>
                 <label>by: </label>
-                <input ng-model="review.author" type="email" />
+                <input ng-model="reviewCtrl.review.author" type="email" />
                 <input type="button" value="Submit" />
             </form>
             <!-- ng-show: shows the tag according to a predicate - https://docs.angularjs.org/api/ng/directive/ngShow -->
