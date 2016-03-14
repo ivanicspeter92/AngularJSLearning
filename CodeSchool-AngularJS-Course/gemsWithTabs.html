@@ -53,6 +53,27 @@
                     <cite>by: {{ review.author }}</cite>
                 </blockquote>
             </div>
+
+            <form name="reviewForm">
+                <blockquote>
+                    <b>Rating: {{ review.rating }}</b>
+                    {{ review.body }}
+                    <cite>by: {{ review.author }}</cite>
+                </blockquote>
+
+                <!-- ng-model: binds the value of the form element to a property - https://docs.angularjs.org/api/ng/directive/ngModel -->
+                <select ng-model="review.rating">
+                    <option value="1">1</option>
+                    <option value="4">2</option>
+                    <option value="4">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <textarea ng-model="review.body"></textarea>
+                <label>by: </label>
+                <input ng-model="review.author" type="email" />
+                <input type="button" value="Submit" />
+            </form>
             <!-- ng-show: shows the tag according to a predicate - https://docs.angularjs.org/api/ng/directive/ngShow -->
             <button ng-show="store.product.canPurchase">Add to Cart</button>
         </section>
