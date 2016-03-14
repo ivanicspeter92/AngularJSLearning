@@ -40,7 +40,10 @@
 			image: {
 				full: gemImagesPath + "redgem_full.png",
 				thumbnail: gemImagesPath + "redgem_thumbnail.png"
-			}
+			},
+			reviews: [
+
+			]
 		},
 		{
 			name: 'Shadowgem',
@@ -51,7 +54,10 @@
 			image: {
 				full: gemImagesPath + "redgem_full.png",
 				thumbnail: gemImagesPath + "redgem_thumbnail.png"
-			}
+			},
+			reviews: [
+
+			]
 		},
 		{
 			name: 'Tiger\'s Eye',
