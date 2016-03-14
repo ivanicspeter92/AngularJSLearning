@@ -54,7 +54,7 @@
                 </blockquote>
             </div>
 
-            <form name="reviewForm" ng-controller="ReviewController as reviewCtrl">
+            <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewController.addReview(product)">
                 <blockquote>
                     <b>Rating: {{ reviewCtrl.review.rating }}</b>
                     {{ reviewCtrl.review.body }}
@@ -69,7 +69,7 @@
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <textarea ng-model="review.body"></textarea>
+                <textarea ng-model="reviewCtrl.review.body"></textarea>
                 <label>by: </label>
                 <input ng-model="reviewCtrl.review.author" type="email" />
                 <input type="button" value="Submit" />
