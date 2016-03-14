@@ -54,7 +54,8 @@
                 </blockquote>
             </div>
 
-            <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewController.addReview(product)">
+            <!-- ng-submit: performs a function call upon the form is submitted - https://docs.angularjs.org/api/ng/directive/ngSubmit -->
+            <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
                 <blockquote>
                     <b>Rating: {{ reviewCtrl.review.rating }}</b>
                     {{ reviewCtrl.review.body }}
@@ -72,8 +73,9 @@
                 <textarea ng-model="reviewCtrl.review.body"></textarea>
                 <label>by: </label>
                 <input ng-model="reviewCtrl.review.author" type="email" />
-                <input type="button" value="Submit" />
+                <input type="submit" value="Submit" />
             </form>
+
             <!-- ng-show: shows the tag according to a predicate - https://docs.angularjs.org/api/ng/directive/ngShow -->
             <button ng-show="store.product.canPurchase">Add to Cart</button>
         </section>
