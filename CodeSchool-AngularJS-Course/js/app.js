@@ -12,7 +12,24 @@
 			image: {
 				full: gemImagesPath + "redgem_full.png",
 				thumbnail: gemImagesPath + "redgem_thumbnail.png"
-			}
+			},
+			reviews: [
+				{
+					body: "This is my first review on Dodecahedron",
+					rating: 5,
+					author: "peter.ivanics@reslink.fi"
+				},
+				{
+					body: "LOVE IT!",
+					rating: 5,
+					author: "ivanicspeter92@gmail.com"
+				},
+				{
+					body: "Crappy",
+					rating: 1,
+					author: "john@doe.com"
+				}
+			]
 		},
 		{
 			name: 'Pentagonal Gem',
@@ -45,7 +62,14 @@
 			image: {
 				full: gemImagesPath + "redgem_full.png",
 				thumbnail: gemImagesPath + "redgem_thumbnail.png"
-			}
+			},
+			reviews: [
+				{
+					body: "Pretty good",
+					rating: 3,
+					author: "peter.ivanics@reslink.fi"
+				}
+			]
 		}
 	];
 	
