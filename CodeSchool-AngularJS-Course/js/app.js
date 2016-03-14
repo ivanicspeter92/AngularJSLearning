@@ -130,5 +130,16 @@
 
 	app.controller('ReviewController', function() {
 		this.review = {};
+
+		/**
+		 * Adds the review to the provided product.
+		 * @param product The product to which the current review should be added.
+		 *
+		 * @author Peter Ivanics
+		 * @date 14.03.2016.
+         */
+		this.addReview = function(product) {
+			product.reviews.push(this.review);
+		};
 	});
 })();
