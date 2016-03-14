@@ -81,12 +81,18 @@
 		/**
 		 * Indicates which of the tabs in order is selected.
 		 * @type {number}
+		 *
+		 * @author Peter Ivanics
+		 * @date 13.03.2016.
          */
 		this.tab = 1;
 
 		/**
 		 * Sets the value of the tab variable to the given value.
 		 * @param tab The cardinal order of the tab to be selected.
+		 *
+		 * @author Peter Ivanics
+		 * @date 13.03.2016.
          */
 		this.selectTab = function(tab) {
 			this.tab = tab;
@@ -106,13 +112,23 @@
 	app.controller('GalleryController', function() {
 		this.current = 0;
 
+		/**
+		 * Sets the value of the current variable to the given value.
+		 * @param current The new value of the current.
+		 *
+		 * @author Peter Ivanics
+		 * @date 14.03.2016.
+         */
 		this.setCurrent = function(current) {
 			if (current === null) {
 				this.current = 0;
-			}
-			else {
+			} else {
 				this.current = current;
 			}
 		};
+	});
+
+	app.controller('ReviewController', function() {
+		this.review = {};
 	});
 })();
