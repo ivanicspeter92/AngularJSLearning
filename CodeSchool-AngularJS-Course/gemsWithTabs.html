@@ -64,16 +64,17 @@
                 </blockquote>
 
                 <!-- ng-model: binds the value of the form element to a property - https://docs.angularjs.org/api/ng/directive/ngModel -->
-                <select ng-model="reviewCtrl.review.rating">
+                <select ng-model="reviewCtrl.review.rating" required>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <textarea ng-model="reviewCtrl.review.body"></textarea>
+                <textarea ng-model="reviewCtrl.review.body" required></textarea>
                 <label>by: </label>
-                <input ng-model="reviewCtrl.review.author" type="email" />
+                <input ng-model="reviewCtrl.review.author" type="email" required />
+                <div>Is reviewForm valid? {{ reviewForm.$valid }}</div>
                 <input type="submit" value="Submit" />
             </form>
 
