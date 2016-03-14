@@ -47,9 +47,12 @@
             </div>
             <div class="panel" ng-show=" panel.isSelected(3)">
                 <h4>Reviews</h4>
-                <blockquote>No reviews yet</blockquote>
+                <blockquote ng-repeat="review in product.reviews">
+                    <b>Rating: {{ review.rating }}</b>
+                    {{ review.body }}
+                    <cite>by: {{ review.author }}</cite>
+                </blockquote>
             </div>
-
             <!-- ng-show: shows the tag according to a predicate - https://docs.angularjs.org/api/ng/directive/ngShow -->
             <button ng-show="store.product.canPurchase">Add to Cart</button>
         </section>
