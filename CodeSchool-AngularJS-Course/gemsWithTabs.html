@@ -56,7 +56,7 @@
 
             <!-- ng-submit: performs a function call upon the form is submitted - https://docs.angularjs.org/api/ng/directive/ngSubmit -->
             <!-- novalidate: turns of all default HTML validation -->
-            <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)" novalidate>
+            <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
                 <blockquote>
                     <b>Rating: {{ reviewCtrl.review.rating }}</b>
                     {{ reviewCtrl.review.body }}
