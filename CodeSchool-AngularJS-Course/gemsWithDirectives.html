@@ -15,8 +15,11 @@
     <li ng-repeat="product in store.products | orderBy: 'price'" ng-hide="product.soldOut">
 
         <!-- ng-include: includes the contents of a HTML file - https://docs.angularjs.org/api/ng/directive/ngInclude -->
-        <h1 ng-include="'product-title.html'">
+        <!--<h1 ng-include="'product-title.html'"></h1> -->
+        <h1>
+            <product-title></product-title>
         </h1>
+
 
         <!-- ng-src: loading data using "src" does not work right, ng-src is trusted - https://docs.angularjs.org/api/ng/directive/ngSrc -->
         <img ng-src="{{ product.image.thumbnail }}"/>
