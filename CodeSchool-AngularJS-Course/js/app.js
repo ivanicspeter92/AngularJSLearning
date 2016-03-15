@@ -150,4 +150,16 @@
 			this.review = {};
 		};
 	});
+
+	/**
+	 * A custom directive defining the product-title HTML tag.
+	 *
+	 * @seealso https://docs.angularjs.org/guide/directive
+	 */
+	app.directive('productTitle', function() { // the camel case name should be used as e.g. "product-title" in HTML
+		return {
+			restrict: 'E', // specifies the type of the directive - https://docs.angularjs.org/guide/directive
+			templateUrl: 'product-title.html'
+		};
+	});
 })();
